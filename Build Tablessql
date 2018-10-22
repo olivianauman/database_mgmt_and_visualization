@@ -1,27 +1,27 @@
 --Hutan modified script because we couldn't load the data based off data type sizes, THANKS FOR SLIPPING DAVID!! :)
 
 CREATE TABLE EMPLOYEE (
-"EmployeeID" varchar2(60) NOT NULL,
-"Name" varchar2(50),
+EmployeeID varchar2(60) NOT NULL,
+EMP_NAME varchar2(50),
 Gender char(1),
-CONSTRAINT EMPLOYEE_PK primary key ("EmployeeID"))
+CONSTRAINT EMPLOYEE_PK primary key (EmployeeID))
 ;
 
-CREATE TABLE "POSITION" (
-"PositionID" varchar2(50) NOT NULL,
-"County" varchar2(50),
-"Department" varchar2(75),
-"Position" varchar2(50),
-CONSTRAINT POSITION_PK primary key ("PositionID")
+CREATE TABLE POSITION (
+PositionID varchar2(50) NOT NULL,
+County varchar2(50),
+Department varchar2(75),
+Position varchar2(50),
+CONSTRAINT POSITION_PK primary key (PositionID)
 );
 
-CREATE TABLE "SALARY" 
-(   "SalaryID"  varchar2(50) NOT NULL,
-    "Fiscal_Year" varchar2(50),
-    "Total_Salary" number(38,0),
-    "PositionID" varchar2(50),
-    "EmployeeID" varchar2(60),
-    CONSTRAINT SALARY_PK primary key ("SalaryID"),
-    CONSTRAINT EMPLOYEE_FK foreign key ("EmployeeID") references EMPLOYEE("EmployeeID"),
-    CONSTRAINT POSITION_FK foreign key ("PositionID") references POSITION("PositionID")
-)   ;
+CREATE TABLE SALARY 
+(   SalaryID  varchar2(50) NOT NULL,
+    Fiscal_Year varchar2(50),
+    Total_Salary number(38,0),
+    PositionID varchar2(50),
+    EmployeeID varchar2(60),
+    CONSTRAINT SALARY_PK primary key (SalaryID),
+    CONSTRAINT EMPLOYEE_FK foreign key (EmployeeID) references EMPLOYEE(EmployeeID),
+    CONSTRAINT POSITION_FK foreign key (PositionID) references POSITION(PositionID)
+) ;

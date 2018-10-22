@@ -1,0 +1,25 @@
+CREATE TABLE "SALARY" 
+(   "SalaryID"  varchar2(10) NOT NULL,
+    "Fiscal_Year" char(4),
+    "Total_Salary" number(8,0),
+    "PositionID" varchar(5),
+    "EmployeeID" varchar(6),
+    CONSTRAINT SALARY_PK primary key ("SalaryID"),
+    CONSTRAINT EMPLOYEE_FK foreign key ("EmployeeID") references EMPLOYEE("EmployeeID"),
+    CONSTRAINT POSITION_FK foreign key ("PositionID") references POSITION("PositionID")
+)   ;
+
+CREATE TABLE EMPLOYEE (
+"EmployeeID" varchar2(6) NOT NULL,
+"Name" varchar2(50),
+Gender char(1),
+CONSTRAINT EMPLOYEE_PK primary key ("EmployeeID"))
+;
+
+CREATE TABLE "POSITION" (
+"PositionID" varchar2(5) NOT NULL,
+"County" varchar2(14),
+"Department" varchar(50),
+"Position" varchar(50),
+CONSTRAINT POSITION_PK primary key ("PositionID")
+);

@@ -10,6 +10,7 @@ CONSTRAINT EMPLOYEE_PK primary key (EmployeeID))
 CREATE TABLE POSITION (
 PositionID varchar2(50) NOT NULL,
 County varchar2(50),
+State char(4),
 Department varchar2(75),
 Position varchar2(50),
 CONSTRAINT POSITION_PK primary key (PositionID)

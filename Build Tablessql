@@ -18,7 +18,7 @@ CONSTRAINT POSITION_PK primary key (PositionID)
 CREATE TABLE SALARY 
 (   SalaryID  varchar2(50) NOT NULL,
     Fiscal_Year varchar2(50),
-    Total_Salary number(38,0),
+    Total_Salary number(38,2),
     PositionID varchar2(50),
     EmployeeID varchar2(60),
     CONSTRAINT SALARY_PK primary key (SalaryID),
